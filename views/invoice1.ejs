@@ -1,0 +1,319 @@
+<!doctype html>
+  <html lang="en">
+  <head>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>ICT</title>
+    <style type="text/css">
+      .container{
+        margin-top: 2%;
+      }
+      .logo-top{
+        border-top: 2px solid #dee2e633;
+        padding-top: 1px;
+      }
+      .row img{
+        width: 141px;
+      }
+      .tabletop table{
+        border-color: #fff;
+      }
+      .tablemiddle table{
+        background-color: #f2ecfcb0;
+        margin-bottom: 0px;
+      }
+      .tablemiddle table th{
+        padding: 25px;
+      }
+      .tablemiddle table td{
+        padding: 25px;
+      }
+      .tablebottom table th{
+        background-color: #f2ecfcb0;
+        padding: 5px 10px 17px 20px;
+      }
+      .tablebottom table td{
+        padding: 20px;
+      }
+      .righttext{
+        text-align: right;
+      }
+      h6{
+        font-size: 13px;
+      }
+      .total-details{
+        margin-top: 50px;
+        margin-bottom: 50px;
+        text-align: right;
+      }
+      .total-details ul{
+        list-style-type: none;
+      }
+      .total-details h2{
+        font-size: 20px;
+      }
+      .total-details{
+        font-size: 16px;
+      }
+      tbody {
+        line-height: 12px;
+      }
+      th{
+        font-size: 14px;
+      }
+
+      @media (max-width: 767px){
+        .tablemiddle table td {
+          padding: 0px 5px 0px 5px;
+        }
+        .tablemiddle table th {
+          padding: 20px 5px 20px 5px;
+        }
+        .tablebottom table th {
+          background-color: #f2ecfcb0;
+          padding: 0px 5px 0px 5px;
+        }
+        .tablebottom table td {
+          padding: 0px 5px 0px 5px;
+        }
+        body p{
+          font-size: 13px;
+        }
+        td{
+          font-size: 13px;
+        }
+        th{
+          font-size: 14px;
+        }
+        ul{
+          font-size: 14px;
+        }
+        .total-details h2 {
+          font-size: 14px;
+        }
+        th.description {
+          padding-bottom: 38px!important;
+        }
+      }
+      .floatright{
+        float:right;
+        font-weight: bold;
+        font-size: 18px;
+      }
+      .vendorbox{
+        display: flow-root;
+      }
+      .vendordetail{
+        width: fit-content;
+    max-width: 380px;
+    font-size: 14px;
+    float: right;
+    border: solid 1px #52439f;
+    right: 0px;
+    padding: 15px;
+    border-radius: 5px;
+    background: #f2ecfcb0;
+
+      }
+      td p{
+        line-height:1.5;
+      }
+      .totalhead,.totalfoot{
+        font-weight: bold;
+
+      }
+      .totalhead,.totalfoot,.totalbody{
+        font-size: 14px;
+      }
+      .pt5 p{
+        padding-top: 7px;
+      }
+      .pt7{
+        padding-top: 7px;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <div class="container">
+        <% if (report.length> 0) { %> <% report.forEach(report=> {%>
+        <div class="logo-top">
+          <div class="floatright">Tax Invoice</div>
+          <div class="row">
+            <img src="https://ictkart-pro.s3.us-east-2.amazonaws.com/logo.png">
+          </div>
+
+        </div>
+        <!-- <br> -->
+        <div class="vendorbox">
+          <div class="vendordetail">
+            Sold by : <strong>Q-Tech General Trading LLC</strong><br>
+            VAT : <strong>100483307300003</strong><br><hr>
+            Tax Invoice Issue Date : <strong>10 February 2022</strong><br>
+            Tax Invoice Number : <strong><%= report.buyproducts.invoiceNumber %></strong><br>
+            Total Payable : <p>AED 91.13</p>
+            <br>
+          </div>
+        </div>
+        <div class="row">
+          <strong>
+            HARITHAPRIYA<br>
+            ZUBARA, NOOR AL KHOR SALOON BUILDING, GROUND FLOOR, ROOM NO:1<br>
+            FUJAIRAH, KHORFAKKAN<br>
+            AE<br>
+          </strong>
+        </div>
+        <!-- <br> -->
+        <div class="">
+          For questions about your order, visit <a href="www.ictcircle.com/contact-us" >www.ictcircle.com/contact-us</a>
+        </div>
+
+        <!-- <hr> -->
+        <div class="tablemiddle" style="background-color: #f2ecfcb0">
+          <table  class="table table-responsive">
+            <thead>
+              <tr>
+                <th scope="col">Billing address</th>
+                <th scope="col">Delivery address</th>
+                <th scope="col">Sold By</th>
+              </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>
+                <p class="pt7" >
+                HarithaPriya<br>
+                Zubara, Noor Al Khor Saloon Building,<br> Ground Floor, Room No:1<br>
+                Fujairah, Khorfakkan<br>
+                AE<br>
+              </p>
+              </td>
+              <td>
+                <p class="pt7">
+                HarithaPriya<br>
+                Zubara, Noor Al Khor Saloon Building, <br>
+                Ground Floor, Room No:1<br>
+                Fujairah, Khorfakkan<br>
+                AE
+              </p>
+              </td>
+              <td>
+                <p class="pt7">
+                JABAL ARAFA ELECTRONICS TRADING L.L.C <br>
+                AE 100218782900003<br>
+                P11044-IAFE000838<br>
+                Dubai, 54107<br>
+                United Arab Emirates <br>
+                VAT # 100483307300003<br>
+              </p>
+              </td>
+            </tr>
+          </tbody>
+          </table>
+        </div>
+        <!-- <br><br> -->
+        <div><h5>Invoice Detail</h5></div>
+        <div class="tablebottom">
+          <table class="table" class="table-responsive">
+            <thead>
+              <tr>
+                <th class="description" scope="col">Description</th>
+                <th class="qty" scope="col">Qty</th>
+                <th class="righttext" scope="col">Unit Price<br><h6>(excl VAT)</h6></th>
+                <th class="righttext" scope="col">VAT Rate</th>
+                <th class="righttext" scope="col">Unit VAT <h6>Amount</h6></th>
+                <!-- <th class="righttext" scope="col">Unit Price<br><h6>(incl. VAT)</h6></th> -->
+                <th class="righttext" scope="col">Item Subtotal<h6>(incl. VAT)</h6></td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr >
+                <td class="pt5"><p><%= report.products.title %></p></td>
+                <td class="righttext pt5"><p><%=report.buyproducts.totalItems %></p></td>
+                <td class="righttext pt5"><p><%= report.products.sellingPrice %></p></td>
+                <td class="righttext pt5"><p>5.00%</p></td>
+                <td class="righttext pt5"><p>30.62</p></td>
+                <!-- <td class="righttext">643.00</td> -->
+                <td class="righttext pt5"><p><%= report.products.sellingPrice %></p></td>
+              </tr>
+              <!-- <tr>
+                <td>1 &nbsp 8 Dual SIM Syber black 8GN RAM 128GB LTE-Global Version</td>
+                <td class="righttext">2</td>
+                <td class="righttext">612.38</td>
+                <td class="righttext">5.00%</td>
+                <td class="righttext">30.62</td>
+                <td class="righttext">643.00</td>
+                <td class="righttext">643.00</td>
+              </tr> -->
+            </tbody>
+            <thead>
+              <tr>
+                  <td></td>
+                  <td></td>
+                  <td><p>TOTAL</p> <p></p></td>
+                  <td></td>
+                  <td></td>
+                  <td class="" style="width:100px"><p>AED <%= report.products.sellingPrice %></p></td>
+              <tr>
+              <tr><tr>
+              <tr><tr>
+            </thead>
+          </table>
+        </div>
+        <div class="total-details">
+         <div class="row">
+          <div class="col-md-6"></div>
+          <div class="col-md-6">
+            <div style="text-align:left"><h6>Vat summary<h6></div>
+            <hr>
+           <div class="row totalhead">
+             <div class="col-md-4 col-4">VAT Rate
+             </div>
+             <div class="col-md-4 col-4">
+               Sub Total
+             </div>
+             <div class="col-md-4 col-4">
+               VAT
+             </div>
+           </div>
+           <div class="row totalbody">
+             <div class="col-md-4 col-4">5%
+             </div>
+             <div class="col-md-4 col-4">
+               643.00
+             </div>
+             <div class="col-md-4 col-4">
+               30.62
+             </div>
+           </div>
+           <!-- <hr> -->
+           <div class="row totalfoot">
+             <div class="col-md-4 col-4">
+               TOTAL
+             </div>
+             <div class="col-md-4 col-4">
+               AED <%= report.products.sellingPrice %>
+             </div>
+             <div class="col-md-4 col-4">
+               AED  30.62
+             </div>
+           </div>
+
+        </div>
+      </div>
+        
+      <% });%>
+      <% }%>
+    </div>
+  </div>
+</section>
+
+<!-- Option 1: Bootstrap Bundle with Popper -->
+
+</body>
+</html>

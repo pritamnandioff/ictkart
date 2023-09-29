@@ -1,0 +1,5 @@
+npm install sequelize pg pg-hstore --save
+https://www.postgresqltutorial.com/postgresql-show-databases/
+https://tecadmin.net/how-to-install-postgresql-in-ubuntu-20-04/
+https://serverspace.io/support/help/how-to-install-postgresql-on-ubuntu-20-04/
+https://stackoverflow.com/questions/58239607/pgadmin-package-pgadmin4-has-no-installation-candidate

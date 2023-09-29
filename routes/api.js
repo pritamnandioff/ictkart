@@ -1,0 +1,46 @@
+const express = require('express');
+const adminRoutes = require('./api/admin');
+const userRoutes = require('./api/user');
+const categoriesRoutes = require('./api/categories');
+const bannerRoutes = require('./api/banner');
+const contactUsRoutes = require('./api/contactUs');
+const contentRoutes = require('./api/content');
+const brandRoutes = require('./api/brand');
+const faqRoutes = require('./api/faq');
+const productRoutes = require('./api/product');
+const buyProductRoutes = require('./api/buyProduct');
+const addressRoutes = require('./api/address');
+const productSpecificationRoutes = require('./api/productSpecification');
+const reviewRatingRoutes = require('./api/reviewRatings');
+const wishlistRoutes = require('./api/wishlist');
+const serviceRoutes = require('./api/service');
+const vendorRoutes = require('./api/vendorService');
+const manufacturerRoutes = require('./api/manufacturer');
+const basicAuth = require('../middleware/basic-authenticate');
+const impFile = require('./api/import-file');
+const productController = require('../controllers/productController');
+
+const router = express.Router();
+
+router.use('/admin', basicAuth, adminRoutes);
+router.use('/user', basicAuth, userRoutes);
+router.use('/categories', basicAuth, categoriesRoutes);
+router.use('/banner', basicAuth, bannerRoutes);
+router.use('/content', basicAuth, contentRoutes);
+router.use('/brand', basicAuth, brandRoutes);
+router.use('/faq',basicAuth,  faqRoutes);
+router.use('/product',basicAuth,  productRoutes);
+router.use('/buyproduct',basicAuth, buyProductRoutes);
+router.use('/address',basicAuth, addressRoutes);
+router.use('/specification',basicAuth,  productSpecificationRoutes);
+router.use('/review',basicAuth, reviewRatingRoutes);
+router.use('/wishlist',basicAuth,  wishlistRoutes);
+router.use('/service',basicAuth,  serviceRoutes);
+router.use('/vendor/services',basicAuth,  vendorRoutes);
+router.use('/contact',basicAuth,  contactUsRoutes);
+router.use('/manufacturer',basicAuth,  manufacturerRoutes);
+router.use('/import',basicAuth,  impFile);
+router.get('/invoice/download/:id', productController.invoicePdf);
+router.get('/', (req, res) => res.json('Welcome to APIs.'));
+
+module.exports = router;

@@ -1,0 +1,10 @@
+const express = require('express');
+const checkAuth = require('../../middleware/authenticated');
+const vendorServiceController = require('../../controllers/vendorServiceController');
+const router = express.Router();
+router.post('/add', vendorServiceController.add);
+router.post('/update', vendorServiceController.update);
+router.get('/list', vendorServiceController.list);
+router.get('/detail', vendorServiceController.details);
+router.post('/update/status', vendorServiceController.updateStatus);
+module.exports = router;

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ICT Kart</title>
+	<style type="text/css" media="screen">
+		body {
+			background-color: skyblue;
+			text-decoration-color: white;
+			font-size:5em;
+		}
+	</style>
+</head>
+<p>
+    <% if (data.productorderhistory.orderStatus== 'ordered') { %>
+        <p> Hello Customer,
+            Thank you for choosing ICTKart for all your IT product requirements. From the latest and top-most in IT products, you have chosen the best from our online portal. We want to inform you that we received your order, and the vendor will contact you when your package will be processed. Here are the details of your purchases:  </p>
+        
+        <%} else if(data.productorderhistory.orderStatus== 'shipped'){ %>
+            <p>Hello Customer,
+                Thank you for choosing ICTKart for all your IT product requirements. Your order has been shipped and we will contact you when your package is out for delivery. Here are the details of your purchases:      </p>
+            <%} else if(data.productorderhistory.orderStatus== 'outForDelivery'){ %>
+                <p> ssHello Customer,
+                    Thank you for choosing ICTKart for all your IT product requirements. Your order has been dispatched and we will contact you when your package is shipped. Here are the details of your purchases:   </p>
+                <%} else if(data.productorderhistory.orderStatus== 'delivered'){ %>
+                    <p> Hello Customer,
+                        Great news is that ICTKart seller has delivered your package successfully. We hope you like the products. Here are the details of your purchases:   </p>
+                    <%} else if(data.productorderhistory.orderStatus== 'return'){ %>
+                        <p>  </p>
+                        <%} else if(data.productorderhistory.orderStatus== 'cancel'){ %>
+                            <p>  </p>
+        <% } %>
+</p>
+<body>
+	
+	<ul>
+		<li>Order number: <%=data.buyproducts.orderId%></li>
+		<li>Order date: <%=(data.buyproducts.createdAt).toUTCString()%></li>
+		<li>Name: <%=data.user.firstName%> <%=data.user.lastName%></li>
+		<li>Email: <%=data.user.email%></li>
+		<li>Contact no.: <%=data.user.dialCode%> <%=data.user.mobile%></li>
+		<li>Product information: <%=data.products.title%></li>
+		<li>Price: <%=data.products.sellingPrice%></li>
+		<li>Shipping address: <%=data.user.address.postalAddress%> <%=data.user.address.city%> <%=data.user.address.state%> <%=data.user.address.country%></li>
+	</ul>
+    <p>
+Thank you for shopping with us!
+• Team ICT Kart
+    </p>
+</body>
+
+</html>
